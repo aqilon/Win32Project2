@@ -33,11 +33,12 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR nCmdLine, int nCmdShow
 }
 
 struct RECTS {bool flag; RECT r;};
-RECTS rects[10][10];
+RECTS rects[100][100];
+int rAm = 3;
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	RECT rectClient, rectAll; int rAm = 4; 
+	RECT rectClient, rectAll; 
 	int headY = GetSystemMetrics(SM_CYSMCAPTION), headX = GetSystemMetrics(SM_CYSMCAPTION);
 	GetClientRect(hwnd, &rectClient); GetWindowRect(hwnd, &rectAll);
 	switch (uMsg)
@@ -59,10 +60,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					FillRect(hdc, &rects[i][j].r, HBRUSH(CreateSolidBrush(RGB(255, 0, 55))));
 				}
 			}
-		}
+		} 
 		EndPaint(hwnd, &ps);
-	}	return 0;
-	case WM_MOUSEMOVE:
+	}	return 0; 
+	case WM_MOUSEMOVE: ////iosahdosahdoahsoidhosa[hdasuoidas
 		POINT pos; GetCursorPos(&pos); 
 		//if ((pos.x > rectAll.left) && (pos.y < rectAll.bottom) && (pos.x < rectAll.right) && (pos.y > rectAll.top))
 			for (int i = 0; i < rAm; i++) {
@@ -79,10 +80,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		if (hwnd == FindWindow(L"WindowClass", L"Board")) PostQuitMessage(0);
 		return 0;
 	case WM_LBUTTONDOWN:
-		rects[0][5].flag = true; InvalidateRect(hwnd, NULL, FALSE);
+		rAm++; InvalidateRect(hwnd, NULL, FALSE);
 		return 0;
 	case WM_RBUTTONDOWN:
-		InvalidateRect(hwnd, NULL, FALSE);
+		rAm--; InvalidateRect(hwnd, NULL, FALSE);
 		return 0;
 	}
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
