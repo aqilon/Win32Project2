@@ -63,7 +63,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		} 
 		EndPaint(hwnd, &ps);
 	}	return 0; 
-	case WM_MOUSEMOVE: ////iosahdosahdoahsoidhosa[hdasuoidas
+	case WM_MOUSEMOVE: 
 		POINT pos; GetCursorPos(&pos); 
 		//if ((pos.x > rectAll.left) && (pos.y < rectAll.bottom) && (pos.x < rectAll.right) && (pos.y > rectAll.top))
 			for (int i = 0; i < rAm; i++) {
