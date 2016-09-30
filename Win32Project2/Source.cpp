@@ -29,7 +29,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR nCmdLine, int nCmdShow
 	while (GetMessage(&msg, NULL, 0, 0)) {
 		DispatchMessage(&msg);
 	}
-	return 0;
+	return 0;// HUIHUIHUHIUHHUI
 }
 
 struct RECTS {bool flag; RECT r;};
