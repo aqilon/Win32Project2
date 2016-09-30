@@ -55,7 +55,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		for (int i = 0; i < rAm; i++) {
 			for (int j = 0; j < rAm; j++) {
 				Rectangle(hdc, rectClient.right / rAm * i, rectClient.bottom / rAm * j, rectClient.right / rAm * (i + 1), rectClient.bottom / rAm * (j + 1));
-				rects[i][j].r = { rectClient.right / rAm * i,rectClient.bottom / rAm * j,rectClient.right / rAm * (i + 1),rectClient.bottom / rAm * (j + 1) };
+				rects[i][j].r = { rectClient.right / rAm * i,rectClient.bottom / rAm * j,rectClient.right / rAm * (i + 1),rectClient.bottom / rAm * (j + 1)};
 				if (rects[i][j].flag == true) {
 					FillRect(hdc, &rects[i][j].r, HBRUSH(CreateSolidBrush(RGB(255, 0, 55))));
 				}
