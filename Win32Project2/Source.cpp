@@ -11,7 +11,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR nCmdLine, int nCmdShow
 	wc.lpszClassName = L"WindowClass";
 	wc.hInstance = hInstance;
 	wc.hbrBackground = (HBRUSH)(1);
-
+	  
 	if (!RegisterClass(&wc)) {
 		MessageBox(NULL, _T("Call to RegisterClassEx faild!"), _T("Win32 Guided Tour"), NULL);
 		return 1;
