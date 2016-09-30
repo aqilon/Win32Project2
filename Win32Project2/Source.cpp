@@ -20,7 +20,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR nCmdLine, int nCmdShow
 	HWND hwnd = CreateWindow(
 		L"WindowClass",
 		L"Board",
-		WS_OVERLAPPEDWINDOW,
+		WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL,
 		GetSystemMetrics(SM_CXSCREEN) / 2 - winSize / 2, GetSystemMetrics(SM_CYSCREEN) / 2 - winSize / 2, winSize, winSize,
 		NULL, NULL, hInstance, NULL);
 	::ShowWindow(hwnd, nCmdShow);
@@ -29,6 +29,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR nCmdLine, int nCmdShow
 	while (GetMessage(&msg, NULL, 0, 0)) {
 		DispatchMessage(&msg);
 	}
+	ScrollWindow(hwnd, 100, 100, (CONST RECT *) NULL, (CONST RECT *) NULL);
 	return 0;// HUIHUIHUHIUHHUI
 }
 
